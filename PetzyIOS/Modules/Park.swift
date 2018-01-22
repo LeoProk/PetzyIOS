@@ -31,7 +31,7 @@ class Park{
     var location : Location
     
     
-    //create class init
+    //class init for new park
     init(title : String,address : String,user : String,image : String,camera : String,
          location : Location) {
         self.title = title

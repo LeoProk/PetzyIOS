@@ -14,7 +14,7 @@ class Location {
     //longitude of the park
     let lng : String
     
-    
+    //class init for new location
     init(lat:String,lng:String) {
         self.lat = lat
         self.lng = lng
