@@ -34,7 +34,7 @@ class Park{
     //create class init
     init(title : String,address : String,user : String,image : String,camera : String,
          location : Location) {
-        self.title = tittle
+        self.title = title
         self.address = address
         self.user = user
         self.image = image

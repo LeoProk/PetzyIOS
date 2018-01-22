@@ -1,9 +1,22 @@
 //
-//  Location.swift
-//  PetzyIOS
-//
-//  Created by user on 1/20/18.
-//  Copyright © 2018 user. All rights reserved.
+//model for location used for park's location
+//lat latitude of the park
+//lng longitude of the park
 //
 
 import Foundation
+
+class Location {
+    
+    //latitude of the park
+    let lat : String
+    
+    //longitude of the park
+    let lng : String
+    
+    
+    init(lat:String,lng:String) {
+        self.lat = lat
+        self.lng = lng
+    }
+}
