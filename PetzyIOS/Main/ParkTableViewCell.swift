@@ -18,6 +18,6 @@ class ParkTableViewCell: UITableViewCell {
     @IBOutlet weak var ParkAddress: UILabel!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
-        <#code#>
+       
     }
 }
