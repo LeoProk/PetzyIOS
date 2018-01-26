@@ -7,6 +7,8 @@ target 'PetzyIOS' do
 
   # Pods for PetzyIOS
   pod 'Firebase/Core'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Database'
   target 'PetzyIOSTests' do
     inherit! :search_paths
     # Pods for testing

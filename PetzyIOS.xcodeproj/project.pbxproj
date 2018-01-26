@@ -21,6 +21,7 @@
 		CE6F53CF1FF2DDF700785907 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6F53CD1FF2DDF700785907 /* LaunchScreen.storyboard */; };
 		CE6F53DA1FF2DDF700785907 /* PetzyIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F53D91FF2DDF700785907 /* PetzyIOSTests.swift */; };
 		CE6F53E51FF2DDF700785907 /* PetzyIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F53E41FF2DDF700785907 /* PetzyIOSUITests.swift */; };
+		CE907BF0201AB9A500D313E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE907BEF201AB9A500D313E7 /* GoogleService-Info.plist */; };
 		EE0FBD402ACA40E911281E10 /* Pods_PetzyIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A588AED671C03DB2E9C15429 /* Pods_PetzyIOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		CE6F53E01FF2DDF700785907 /* PetzyIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetzyIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6F53E41FF2DDF700785907 /* PetzyIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetzyIOSUITests.swift; sourceTree = "<group>"; };
 		CE6F53E61FF2DDF700785907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE907BEF201AB9A500D313E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F493F5FE3AAC7A30E7D99009 /* Pods_PetzyIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetzyIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA59E0101193CBB0607CF96C /* Pods-PetzyIOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetzyIOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetzyIOSUITests/Pods-PetzyIOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +113,7 @@
 		CE6F53B81FF2DDF700785907 = {
 			isa = PBXGroup;
 			children = (
+				CE907BEF201AB9A500D313E7 /* GoogleService-Info.plist */,
 				CE6F53C31FF2DDF700785907 /* PetzyIOS */,
 				CE6F53D81FF2DDF700785907 /* PetzyIOSTests */,
 				CE6F53E31FF2DDF700785907 /* PetzyIOSUITests */,
@@ -313,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE6F53CF1FF2DDF700785907 /* LaunchScreen.storyboard in Resources */,
+				CE907BF0201AB9A500D313E7 /* GoogleService-Info.plist in Resources */,
 				CE6F53CC1FF2DDF700785907 /* Assets.xcassets in Resources */,
 				CE6F53CA1FF2DDF700785907 /* Main.storyboard in Resources */,
 			);
@@ -375,12 +379,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PetzyIOS/Pods-PetzyIOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
