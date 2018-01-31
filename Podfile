@@ -9,6 +9,9 @@ target 'PetzyIOS' do
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
+  pod 'RxSwift',    '~> 4.0'
+  pod 'RxCocoa',    '~> 4.0'
+  pod 'SDWebImage', '~> 4.0'
   target 'PetzyIOSTests' do
     inherit! :search_paths
     # Pods for testing
