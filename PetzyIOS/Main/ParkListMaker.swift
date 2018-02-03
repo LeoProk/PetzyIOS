@@ -18,7 +18,12 @@ public class ParkListMaker {
         //get the date from server in postDict
         ref.observe(DataEventType.value, with: { (snapshot) in
             let postDict = snapshot.value as? [String : AnyObject] ?? [:]
-            print(postDict)
+
+            for mem in postDict{
+                let park = Park(dataSnap: mem.value["title"])
+                print(park.title)
+            }
+            print(postDict.values)
         })
         // return array of parks
         return listOfPark

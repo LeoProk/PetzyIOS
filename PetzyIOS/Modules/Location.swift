@@ -6,17 +6,11 @@
 
 import Foundation
 
-class Location {
+struct Location {
     
     //latitude of the park
-    let lat : String
+    var lat : String?
     
     //longitude of the park
-    let lng : String
-    
-    //class init for new location
-    init(lat:String,lng:String) {
-        self.lat = lat
-        self.lng = lng
-    }
+    var lng : String?
 }

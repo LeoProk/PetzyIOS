@@ -9,6 +9,7 @@
 //
 
 import Foundation
+import Firebase
 
 class Park{
     
@@ -32,13 +33,16 @@ class Park{
     
     
     //class init for new park
-    init(title : String,address : String,user : String,image : String,camera : String,
-         location : Location) {
-        self.title = title
-        self.address = address
-        self.user = user
-        self.image = image
-        self.camera = camera
-        self.location = location
+    init(dataSnap : DataSnapshot) {
+        let userDict = dataSnap.value as! [String:Any]
+        self.title = userDict["title"] as! String
+        self.address = userDict["title"] as! String
+        self.user = userDict["title"] as! String
+        self.image = userDict["title"] as! String
+        self.camera = userDict["title"] as! String
+        location = Location()
+        let locationDict = userDict["location"] as! [String: Any]
+        self.location.lat = locationDict["lat"] as? String
+        self.location.lng = locationDict["lng"] as? String
     }
 }

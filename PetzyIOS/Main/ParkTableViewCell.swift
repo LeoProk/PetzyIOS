@@ -9,13 +9,13 @@ import UIKit
 class ParkTableViewCell: UITableViewCell {
     
     //the image of park from google maps
-    @IBOutlet weak var ParkImage: UIImageView!
+    @IBOutlet weak var parkImage: UIImageView!
     //how far the park from current location
-    @IBOutlet weak var ParkRange: UILabel!
+    @IBOutlet weak var parkRange: UILabel!
     //name of the park
-    @IBOutlet weak var ParkName: UILabel!
+    @IBOutlet weak var parkName: UILabel!
     //adress of the park
-    @IBOutlet weak var ParkAddress: UILabel!
+    @IBOutlet weak var parkAddress: UILabel!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
        
