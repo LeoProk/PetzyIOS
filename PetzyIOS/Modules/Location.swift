@@ -13,4 +13,5 @@ struct Location {
     
     //longitude of the park
     var lng : String?
+    
 }

@@ -53,7 +53,7 @@ class ParkTableViewController: UITableViewController {
         let park = parksArray[indexPath.row]
         //full link to get google map image uses lat and lng for location place
         //and camera for camera angle
-        let imgUrl = "https://maps.googleapis.com/maps/api/streetview?size=400x400&location=" + 33 + 33 + park.camera + "&key=" + "AIzaSyDGTKCSCY_lpKtVrA1bJYctJdrJhjzGMlE";
+        let imgUrl = "https://maps.googleapis.com/maps/api/streetview?size=400x400&location=\(String(describing: park.location.lat)),\(String(describing: park.location.lng))\(park.camera) &key=AIzaSyDGTKCSCY_lpKtVrA1bJYctJdrJhjzGMlE";
         //assign the park image to UIImage of the same category
         cell.parkImage.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named: "placeholder.png"))
         //assign the park title to UILabel of the same category

@@ -23,7 +23,7 @@ class Park{
     var user : String
     
     //image of the park from google maps
-    var image : String
+    //var image : String
     
     //camera x and y
     var camera : String
@@ -36,10 +36,10 @@ class Park{
     init(dataSnap : DataSnapshot) {
         let userDict = dataSnap.value as! [String:Any]
         self.title = userDict["title"] as! String
-        self.address = userDict["title"] as! String
-        self.user = userDict["title"] as! String
-        self.image = userDict["title"] as! String
-        self.camera = userDict["title"] as! String
+        self.address = userDict["address"] as! String
+        self.user = userDict["user"] as! String
+       // self.image = userDict["image"] as! String
+        self.camera = userDict["camera"] as! String
         location = Location()
         let locationDict = userDict["location"] as! [String: Any]
         self.location.lat = locationDict["lat"] as? String
