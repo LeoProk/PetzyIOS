@@ -11,7 +11,7 @@
 import Foundation
 import Firebase
 
-class FirebaseInstance{
+class Park{
     
     //title of the park
     var title : String
