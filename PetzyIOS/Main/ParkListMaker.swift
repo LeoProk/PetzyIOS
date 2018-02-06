@@ -1,6 +1,7 @@
 //
-//this class acsses firebase database from url to get the park information
-//
+//this class acsses firebase database from gets snapshop
+//create new park object from the snapshop and populate
+//the listOfParks array with it
 //
 //
 
@@ -11,25 +12,33 @@ public class ParkListMaker {
     
     var ref: DatabaseReference!
     
-    func getParks() -> Array<Park> {
-        let listOfPark = Array<Park>()
+    func getParks(completion: (_ result: Array<Park>) -> Void)  {
+        var listOfParks:[Park] = []
+        let dispatchGroup = DispatchGroup()
         // create firebase database reffarance from url
         ref = Database.database().reference(fromURL: "https://petzy-1001.firebaseio.com/input")
         //get the date from server in postDict
+        dispatchGroup.enter()
         ref.observe(DataEventType.value, with: { (snapshot) in
-            let postDict = snapshot.value as? [String : AnyObject] ?? [:]
-
+            _ = snapshot.value as? [String : AnyObject] ?? [:]
+            //for loop that interact over snapshot data to poulate new park
+            //add the park to parks array
             for fireObj in snapshot.children{
-                let park = Park(dataSnap : fireObj as! DataSnapshot)
-                
-                print(park.title)
+                //create new park from the firebase info
+                let parkSnap = Park(dataSnap : fireObj as! DataSnapshot)
+                //adds the park to the park list
+                if listOfParks.count < snapshot.childrenCount - 1{
+                    listOfParks.append(parkSnap)
+                    print(snapshot.childrenCount)
+                    print(listOfParks.count)
+                }else {
+                    dispatchGroup.leave()
+                }
             }
-            //let park = Park(dataSnap : snapshot)
-                //print(park)
-            
-            print(postDict.values)
         })
-        // return array of parks
-        return listOfPark
+        // return populated array of parks
+        dispatchGroup.notify(queue: DispatchQueue.main, execute: {
+            print(listOfParks[5].address)
+        })
     }
 }

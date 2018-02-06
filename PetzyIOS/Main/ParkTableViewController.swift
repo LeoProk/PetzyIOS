@@ -18,7 +18,8 @@ class ParkTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //populate the array with parks from firebase
-        parksArray = ParkListMaker().getParks()
+        parksArray = []
+        ParkListMaker().getParks(completion: parksArray)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -51,6 +52,7 @@ class ParkTableViewController: UITableViewController {
         }
         // get the park by row index
         let park = parksArray[indexPath.row]
+        print(park.title)
         //full link to get google map image uses lat and lng for location place
         //and camera for camera angle
         let imgUrl = "https://maps.googleapis.com/maps/api/streetview?size=400x400&location=\(String(describing: park.location.lat)),\(String(describing: park.location.lng))\(park.camera) &key=AIzaSyDGTKCSCY_lpKtVrA1bJYctJdrJhjzGMlE";
