@@ -1,7 +1,8 @@
 //
-//model for location used for park's location
+//model for location used for park's location for google image
 //lat latitude of the park
 //lng longitude of the park
+//
 //
 
 import Foundation
