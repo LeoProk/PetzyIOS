@@ -12,7 +12,8 @@ public class ParkListMaker {
     
     var ref: DatabaseReference!
     
-    func getParks(completion: (_ result: Array<Park>) -> Void)  {
+    func getParks()  {
+       
         var listOfParks:[Park] = []
         let dispatchGroup = DispatchGroup()
         // create firebase database reffarance from url
@@ -29,8 +30,6 @@ public class ParkListMaker {
                 //adds the park to the park list
                 if listOfParks.count < snapshot.childrenCount - 1{
                     listOfParks.append(parkSnap)
-                    print(snapshot.childrenCount)
-                    print(listOfParks.count)
                 }else {
                     dispatchGroup.leave()
                 }
@@ -38,7 +37,7 @@ public class ParkListMaker {
         })
         // return populated array of parks
         dispatchGroup.notify(queue: DispatchQueue.main, execute: {
-            print(listOfParks[5].address)
+            //ParkTableViewController.parksArray = listOfParks
         })
     }
 }

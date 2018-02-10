@@ -17,6 +17,11 @@ class ParkTableViewCell: UITableViewCell {
     //adress of the park
     @IBOutlet weak var parkAddress: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
        
     }

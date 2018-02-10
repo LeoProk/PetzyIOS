@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import Firebase
 
 class ParkTableViewController: UITableViewController {
 
@@ -17,9 +18,31 @@ class ParkTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //populate the array with parks from firebase
         parksArray = []
-        ParkListMaker().getParks(completion: parksArray)
+         let dispatchGroup = DispatchGroup()
+        //populate the array with parks from firebase
+        let ref = Database.database().reference(fromURL: "https://petzy-1001.firebaseio.com/input")
+        dispatchGroup.enter()
+        ref.observe(DataEventType.value, with: { (snapshot) in
+            _ = snapshot.value as? [String : AnyObject] ?? [:]
+            //for loop that interact over snapshot data to poulate new park
+            //add the park to parks array
+            for fireObj in snapshot.children{
+                //create new park from the firebase info
+                let parkSnap = Park(dataSnap : fireObj as! DataSnapshot)
+                //adds the park to the park list
+                if self.parksArray.count < snapshot.childrenCount - 1{
+                    self.parksArray.append(parkSnap)
+                }else {
+                    dispatchGroup.leave()
+                }
+            }
+        })
+        dispatchGroup.notify(queue: DispatchQueue.main, execute: {
+           DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        })
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -52,10 +75,10 @@ class ParkTableViewController: UITableViewController {
         }
         // get the park by row index
         let park = parksArray[indexPath.row]
-        print(park.title)
         //full link to get google map image uses lat and lng for location place
         //and camera for camera angle
-        let imgUrl = "https://maps.googleapis.com/maps/api/streetview?size=400x400&location=\(String(describing: park.location.lat)),\(String(describing: park.location.lng))\(park.camera) &key=AIzaSyDGTKCSCY_lpKtVrA1bJYctJdrJhjzGMlE";
+        let imgUrl: String = "https://maps.googleapis.com/maps/api/streetview?size=400x400&location=\(park.location.lat ?? ""),\(park.location.lng ?? "")\(park.camera) &key=AIzaSyDGTKCSCY_lpKtVrA1bJYctJdrJhjzGMlE";
+        print(imgUrl)
         //assign the park image to UIImage of the same category
         cell.parkImage.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named: "placeholder.png"))
         //assign the park title to UILabel of the same category
@@ -67,7 +90,11 @@ class ParkTableViewController: UITableViewController {
         return cell
     }
     
-
+    //sets the hieght of the row
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 400.0;
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
