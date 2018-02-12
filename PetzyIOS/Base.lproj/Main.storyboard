@@ -18,17 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="337" id="Mtd-dZ-8cQ" customClass="ParkTableViewCell" customModule="PetzyIOS" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParkTableViewCell" rowHeight="337" id="Mtd-dZ-8cQ" customClass="ParkTableViewCell" customModule="PetzyIOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="337"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mtd-dZ-8cQ" id="hV9-BE-gfI">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="336.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byC-X0-BVc">
-                                            <rect key="frame" x="5" y="-7" width="370" height="257"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PK4-kW-IZm">
                                             <rect key="frame" x="16" y="258" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -37,28 +33,27 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paD-8m-nHs">
-                                            <rect key="frame" x="317" y="258" width="42" height="21"/>
+                                            <rect key="frame" x="195" y="258" width="164" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mb-Lf-22D">
-                                            <rect key="frame" x="317" y="296" width="42" height="21"/>
+                                            <rect key="frame" x="195" y="296" width="164" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byC-X0-BVc">
+                                            <rect key="frame" x="5" y="-7" width="370" height="257"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="ParkAddress" destination="8mb-Lf-22D" id="jkA-mU-lVR"/>
-                                    <outlet property="ParkImage" destination="byC-X0-BVc" id="sAY-1z-Wv2"/>
-                                    <outlet property="ParkName" destination="paD-8m-nHs" id="Old-ls-wZb"/>
-                                    <outlet property="ParkRange" destination="PK4-kW-IZm" id="AYZ-gw-2en"/>
                                     <outlet property="parkAddress" destination="8mb-Lf-22D" id="NfM-vm-4Np"/>
-                                    <outlet property="parkAdress" destination="8mb-Lf-22D" id="Vwq-Zh-iof"/>
                                     <outlet property="parkImage" destination="byC-X0-BVc" id="uM5-gF-upp"/>
                                     <outlet property="parkName" destination="paD-8m-nHs" id="1cc-7c-1WB"/>
                                     <outlet property="parkRange" destination="PK4-kW-IZm" id="x1P-kP-JOr"/>
