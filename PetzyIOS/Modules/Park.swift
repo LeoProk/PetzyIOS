@@ -1,5 +1,5 @@
 //
-//model class for new park with the following verables
+//model class for to retrive data from firebase with following verables
 //title of the park
 //address of the park
 //user to idenify if park for sumbited or premade
@@ -7,7 +7,10 @@
 //camera with the x and y axis
 //location of the current park with lat and lang
 //
+
 import Foundation
+import Firebase
+
 class Park{
     
     //title of the park
@@ -28,13 +31,25 @@ class Park{
     //lat lang location
     var location : Location
     
-    init(title : String,address : String,user : String,camera : String,location : Location){
-        self.title = title
-        self.address = address
-        self.user = user
-        self.camera = camera
-        self.location = location
-    }
     
-
+    //init for new park
+    init(dataSnap : DataSnapshot) {
+        let userDict = dataSnap.value as! [String:Any]
+        self.title = userDict["title"] as! String
+        self.address = userDict["address"] as! String
+        self.user = userDict["user"] as! String
+        // self.image = userDict["image"] as! String
+        self.camera = userDict["camera"] as! String
+        location = Location()
+        let locationDict = userDict["location"] as! [String: Any]
+        self.location.lat = locationDict["lat"] as? String
+        self.location.lng = locationDict["lng"] as? String
+    }
+    //return image url of the park using google street view with lat and lng parmas
+    // and camera for camera angle
+    func getImage() -> String {
+       let imgUrl: String = "https://maps.googleapis.com/maps/api/streetview?size=400x400&location=\(location.lat ?? ""),\(location.lng ?? "")\(camera)&key=AIzaSyDGTKCSCY_lpKtVrA1bJYctJdrJhjzGMlE";
+       return imgUrl
+    }
 }
+
