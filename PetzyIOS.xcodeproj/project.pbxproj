@@ -9,13 +9,11 @@
 /* Begin PBXBuildFile section */
 		0864B6044399C2696575F870 /* Pods_PetzyIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F493F5FE3AAC7A30E7D99009 /* Pods_PetzyIOSUITests.framework */; };
 		8FEC528E9307E439E24810B8 /* Pods_PetzyIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29395FE59FB3BAD8618500B6 /* Pods_PetzyIOS.framework */; };
+		CE2504A420310D94000C06F6 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2504A320310D93000C06F6 /* Park.swift */; };
 		CE2B318D20153FD3004EA92B /* ParkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B318A20153FD2004EA92B /* ParkTableViewController.swift */; };
-		CE2B318E20153FD3004EA92B /* ParkListMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B318B20153FD2004EA92B /* ParkListMaker.swift */; };
 		CE2B318F20153FD3004EA92B /* ParkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B318C20153FD2004EA92B /* ParkTableViewCell.swift */; };
-		CE2B319120153FF3004EA92B /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B319020153FF3004EA92B /* Park.swift */; };
 		CE2B319320153FFB004EA92B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B319220153FFB004EA92B /* Location.swift */; };
 		CE6F53C51FF2DDF700785907 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F53C41FF2DDF700785907 /* AppDelegate.swift */; };
-		CE6F53C71FF2DDF700785907 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F53C61FF2DDF700785907 /* ViewController.swift */; };
 		CE6F53CA1FF2DDF700785907 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6F53C81FF2DDF700785907 /* Main.storyboard */; };
 		CE6F53CC1FF2DDF700785907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6F53CB1FF2DDF700785907 /* Assets.xcassets */; };
 		CE6F53CF1FF2DDF700785907 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6F53CD1FF2DDF700785907 /* LaunchScreen.storyboard */; };
@@ -50,14 +48,12 @@
 		A588AED671C03DB2E9C15429 /* Pods_PetzyIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetzyIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A91654642622CB5F303F43B8 /* Pods-PetzyIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetzyIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetzyIOS/Pods-PetzyIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		BB2797A79A2DAB7C06B8FAE6 /* Pods-PetzyIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetzyIOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetzyIOSUITests/Pods-PetzyIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
-		CE2B318A20153FD2004EA92B /* ParkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParkTableViewController.swift; path = PetzyIOS/Main/ParkTableViewController.swift; sourceTree = SOURCE_ROOT; };
-		CE2B318B20153FD2004EA92B /* ParkListMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParkListMaker.swift; path = PetzyIOS/Main/ParkListMaker.swift; sourceTree = SOURCE_ROOT; };
-		CE2B318C20153FD2004EA92B /* ParkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParkTableViewCell.swift; path = PetzyIOS/Main/ParkTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		CE2B319020153FF3004EA92B /* Park.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
+		CE2504A320310D93000C06F6 /* Park.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
+		CE2B318A20153FD2004EA92B /* ParkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParkTableViewController.swift; path = PetzyIOS/ParkTableView/ParkTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		CE2B318C20153FD2004EA92B /* ParkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParkTableViewCell.swift; path = PetzyIOS/ParkTableView/ParkTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		CE2B319220153FFB004EA92B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CE6F53C11FF2DDF700785907 /* PetzyIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetzyIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6F53C41FF2DDF700785907 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE6F53C61FF2DDF700785907 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE6F53C91FF2DDF700785907 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE6F53CB1FF2DDF700785907 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6F53CE1FF2DDF700785907 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,10 +97,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE2504A22030EEC8000C06F6 /* ParkTableView */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B318A20153FD2004EA92B /* ParkTableViewController.swift */,
+				CE2B318C20153FD2004EA92B /* ParkTableViewCell.swift */,
+			);
+			path = ParkTableView;
+			sourceTree = "<group>";
+		};
 		CE2B318920153E50004EA92B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				CE2B319020153FF3004EA92B /* Park.swift */,
+				CE2504A320310D93000C06F6 /* Park.swift */,
 				CE2B319220153FFB004EA92B /* Location.swift */,
 			);
 			path = Modules;
@@ -136,10 +141,9 @@
 		CE6F53C31FF2DDF700785907 /* PetzyIOS */ = {
 			isa = PBXGroup;
 			children = (
+				CE2504A22030EEC8000C06F6 /* ParkTableView */,
 				CE2B318920153E50004EA92B /* Modules */,
-				CEC8F9F41FF32F5D00385DEB /* Main */,
 				CE6F53C41FF2DDF700785907 /* AppDelegate.swift */,
-				CE6F53C61FF2DDF700785907 /* ViewController.swift */,
 				CE6F53C81FF2DDF700785907 /* Main.storyboard */,
 				CE6F53CB1FF2DDF700785907 /* Assets.xcassets */,
 				CE6F53CD1FF2DDF700785907 /* LaunchScreen.storyboard */,
@@ -164,16 +168,6 @@
 				CE6F53E61FF2DDF700785907 /* Info.plist */,
 			);
 			path = PetzyIOSUITests;
-			sourceTree = "<group>";
-		};
-		CEC8F9F41FF32F5D00385DEB /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				CE2B318C20153FD2004EA92B /* ParkTableViewCell.swift */,
-				CE2B318A20153FD2004EA92B /* ParkTableViewController.swift */,
-				CE2B318B20153FD2004EA92B /* ParkListMaker.swift */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		E17D3DDFF1E9D3443132A4FB /* Frameworks */ = {
@@ -384,6 +378,8 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -394,6 +390,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -505,11 +503,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE2B318E20153FD3004EA92B /* ParkListMaker.swift in Sources */,
-				CE2B319120153FF3004EA92B /* Park.swift in Sources */,
+				CE2504A420310D94000C06F6 /* Park.swift in Sources */,
 				CE2B318D20153FD3004EA92B /* ParkTableViewController.swift in Sources */,
 				CE2B318F20153FD3004EA92B /* ParkTableViewCell.swift in Sources */,
-				CE6F53C71FF2DDF700785907 /* ViewController.swift in Sources */,
 				CE6F53C51FF2DDF700785907 /* AppDelegate.swift in Sources */,
 				CE2B319320153FFB004EA92B /* Location.swift in Sources */,
 			);
