@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        //sets the menu bar color to green
+        UINavigationBar.appearance().backgroundColor = UIColor(red: 141/255, green: 182/255, blue: 0, alpha:1.0)
+        UINavigationBar.appearance().barTintColor = UIColor(red: 141/255, green: 182/255, blue: 0, alpha:1.0)
+        //sets the color of menu items to black
+        UINavigationBar.appearance().tintColor = UIColor.black
         // Override point for customization after application launch.
         return true
     }
