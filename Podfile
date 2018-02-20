@@ -12,6 +12,8 @@ target 'PetzyIOS' do
   pod 'RxCocoa',    '~> 4.0'
   pod 'SDWebImage', '~> 4.0'
   pod 'SwiftLocation', '~> 3.1.0'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
   target 'PetzyIOSTests' do
     inherit! :search_paths
     # Pods for testing

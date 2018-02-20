@@ -13,6 +13,7 @@
 		CE2B318D20153FD3004EA92B /* ParkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B318A20153FD2004EA92B /* ParkTableViewController.swift */; };
 		CE2B318F20153FD3004EA92B /* ParkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B318C20153FD2004EA92B /* ParkTableViewCell.swift */; };
 		CE2B319320153FFB004EA92B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B319220153FFB004EA92B /* Location.swift */; };
+		CE50E056203BC0F30027D80B /* ParkMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50E055203BC0F30027D80B /* ParkMapView.swift */; };
 		CE6F53C51FF2DDF700785907 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F53C41FF2DDF700785907 /* AppDelegate.swift */; };
 		CE6F53CA1FF2DDF700785907 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6F53C81FF2DDF700785907 /* Main.storyboard */; };
 		CE6F53CC1FF2DDF700785907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6F53CB1FF2DDF700785907 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		CE2B318A20153FD2004EA92B /* ParkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParkTableViewController.swift; path = PetzyIOS/ParkTableView/ParkTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		CE2B318C20153FD2004EA92B /* ParkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParkTableViewCell.swift; path = PetzyIOS/ParkTableView/ParkTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		CE2B319220153FFB004EA92B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		CE50E055203BC0F30027D80B /* ParkMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkMapView.swift; sourceTree = "<group>"; };
 		CE6F53C11FF2DDF700785907 /* PetzyIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetzyIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6F53C41FF2DDF700785907 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6F53C91FF2DDF700785907 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +117,14 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		CE50E054203BC0BD0027D80B /* ParkMap */ = {
+			isa = PBXGroup;
+			children = (
+				CE50E055203BC0F30027D80B /* ParkMapView.swift */,
+			);
+			path = ParkMap;
+			sourceTree = "<group>";
+		};
 		CE6F53B81FF2DDF700785907 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +151,7 @@
 		CE6F53C31FF2DDF700785907 /* PetzyIOS */ = {
 			isa = PBXGroup;
 			children = (
+				CE50E054203BC0BD0027D80B /* ParkMap */,
 				CE2504A22030EEC8000C06F6 /* ParkTableView */,
 				CE2B318920153E50004EA92B /* Modules */,
 				CE6F53C41FF2DDF700785907 /* AppDelegate.swift */,
@@ -339,9 +350,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PetzyIOS/Pods-PetzyIOS-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -506,6 +522,7 @@
 				CE2504A420310D94000C06F6 /* Park.swift in Sources */,
 				CE2B318D20153FD3004EA92B /* ParkTableViewController.swift in Sources */,
 				CE2B318F20153FD3004EA92B /* ParkTableViewCell.swift in Sources */,
+				CE50E056203BC0F30027D80B /* ParkMapView.swift in Sources */,
 				CE6F53C51FF2DDF700785907 /* AppDelegate.swift in Sources */,
 				CE2B319320153FFB004EA92B /* Location.swift in Sources */,
 			);

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(red: 141/255, green: 182/255, blue: 0, alpha:1.0)
         //sets the color of menu items to black
         UINavigationBar.appearance().tintColor = UIColor.black
-        // Override point for customization after application launch.
+        //used to sign to google maps api
+        GMSServices.provideAPIKey("AIzaSyA5WZ_YVzawd3SqZMzzLtvuFYHeGKOMMmo")
         return true
     }
 
