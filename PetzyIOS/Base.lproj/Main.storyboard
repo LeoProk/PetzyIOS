@@ -123,7 +123,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Petzy" id="VV2-WL-ux9" colorLabel="IBBuiltInLabel-Red">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="3gi-yN-fbD" userLabel="Map">
+                        <barButtonItem key="leftBarButtonItem" title="Map" id="3gi-yN-fbD" userLabel="Map">
                             <connections>
                                 <segue destination="5ju-al-6Sx" kind="show" id="Fft-R0-1GX"/>
                             </connections>
