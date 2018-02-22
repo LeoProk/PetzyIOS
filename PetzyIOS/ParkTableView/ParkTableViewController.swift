@@ -62,6 +62,8 @@ class ParkTableViewController: UITableViewController {
         //when done looping over all the park reload the table view on
         //main thread
         dispatchGroup.notify(queue: DispatchQueue.main, execute: {
+            parksLocation.yay = self.curLoc
+            parksLocation.parksArray = self.parksArray
            DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -126,5 +128,11 @@ class ParkTableViewController: UITableViewController {
         }
         //return the distance and approparate range
         return "\(finalDistance) \(range)"
+    }
+    //used to get the current location and parks array in ParkMapView
+    struct parksLocation {
+        static var currentLocation: CLLocation?
+        static var parksArray : Array<Park>?
+        
     }
 }
