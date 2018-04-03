@@ -1,6 +1,6 @@
 //
-//
-//
+//empty cell with park image park title
+//park address 
 //
 
 

@@ -1,9 +1,9 @@
 //
-//  ParkTableViewController.swift
-//  PetzyIOS
-//
-//  Created by user on 1/21/18.
-//  Copyright © 2018 user. All rights reserved.
+//this UITableViewController class get the current location
+//then gets the park info from firebase and display the info
+//in new cells
+//show the park image title address and distance from current
+//location
 //
 
 import UIKit
@@ -62,7 +62,7 @@ class ParkTableViewController: UITableViewController {
         //when done looping over all the park reload the table view on
         //main thread
         dispatchGroup.notify(queue: DispatchQueue.main, execute: {
-            parksLocation.yay = self.curLoc
+            parksLocation.currentLocation = self.curLoc
             parksLocation.parksArray = self.parksArray
            DispatchQueue.main.async {
                 self.tableView.reloadData()
