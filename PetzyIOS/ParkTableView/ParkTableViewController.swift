@@ -24,7 +24,7 @@ class ParkTableViewController: UITableViewController {
         parksArray = []
         //tries to get current location using swiftlocation
         Locator.currentPosition(
-            //acuracy of cuuren location
+            //acuracy of cuurent location
             accuracy: .house,
             //timeout to look for lcoation
             timeout: Timeout.delayed(60.0),
@@ -36,38 +36,7 @@ class ParkTableViewController: UITableViewController {
             onFail: { locationError, cllocation in
                print(locationError)
         })
-        //create dispatch group to update the tab view when done fetching all the
-        //data from firebase
-        let dispatchGroup = DispatchGroup()
-        //populate the array with parks from firebase
-        let ref = Database.database().reference(fromURL: "https://petzy-1001.firebaseio.com/input")
-        dispatchGroup.enter()
-        ref.observe(DataEventType.value, with: { (snapshot) in
-            _ = snapshot.value as? [String : AnyObject] ?? [:]
-            //for loop that loops over snapshot data to poulate new park
-            //add the park to parks array
-            for fireObj in snapshot.children{
-                //create new park from the firebase info
-                let parkSnap = Park(dataSnap : fireObj as! DataSnapshot)
-                //adds the park to the park list
-                //if there still parks left continue to loop otherwise
-                //end the dispatch
-                if self.parksArray.count < snapshot.childrenCount - 1{
-                    self.parksArray.append(parkSnap)
-                }else {
-                    dispatchGroup.leave()
-                }
-            }
-        })
-        //when done looping over all the park reload the table view on
-        //main thread
-        dispatchGroup.notify(queue: DispatchQueue.main, execute: {
-            parksLocation.currentLocation = self.curLoc
-            parksLocation.parksArray = self.parksArray
-           DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        })
+        getPark()
     }
 
     override func didReceiveMemoryWarning() {
@@ -108,11 +77,50 @@ class ParkTableViewController: UITableViewController {
         return cell
     }
     
+    //MARK: - tab hieght
     //sets the hieght of the row
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 400.0;
     }
+    
+    //MARK: - firebase park retriver
+    //create dispatch group to update the tab view when done fetching all the
+    //data from firebase
+    func getPark(){
+        let dispatchGroup = DispatchGroup()
+        //populate the array with parks from firebase
+        let ref = Database.database().reference(fromURL: "https://petzy-1001.firebaseio.com/input")
+        dispatchGroup.enter()
+        ref.observe(DataEventType.value, with: { (snapshot) in
+            _ = snapshot.value as? [String : AnyObject] ?? [:]
+            //for loop that loops over snapshot data to poulate new park
+            //add the park to parks array
+            for fireObj in snapshot.children{
+                //create new park from the firebase info
+                let parkSnap = Park(dataSnap : fireObj as! DataSnapshot)
+                //adds the park to the park list
+                //if there still parks left continue to loop otherwise
+                //end the dispatch
+                if self.parksArray.count < snapshot.childrenCount - 1{
+                    self.parksArray.append(parkSnap)
+                }else {
+                    dispatchGroup.leave()
+                }
+            }
+        })
+        //when done looping over all the park reload the table view on
+        //main thread
+        dispatchGroup.notify(queue: DispatchQueue.main, execute: {
+            parksLocation.currentLocation = self.curLoc
+            parksLocation.parksArray = self.parksArray
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        })
+    }
+    
+    //MARK: - metter and km converter
     //take distance in meters and convert it to kelomters
     func distanceKM(distanceMeters:Int) -> String {
         var range : String
@@ -129,6 +137,7 @@ class ParkTableViewController: UITableViewController {
         //return the distance and approparate range
         return "\(finalDistance) \(range)"
     }
+    
     //used to get the current location and parks array in ParkMapView
     struct parksLocation {
         static var currentLocation: CLLocation?
