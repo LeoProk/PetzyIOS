@@ -38,7 +38,6 @@ class Park{
         self.title = userDict["title"] as! String
         self.address = userDict["address"] as! String
         self.user = userDict["user"] as! String
-        // self.image = userDict["image"] as! String
         self.camera = userDict["camera"] as! String
         location = Location()
         let locationDict = userDict["location"] as! [String: Any]
