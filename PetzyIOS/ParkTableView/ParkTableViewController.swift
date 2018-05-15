@@ -11,6 +11,7 @@ import SDWebImage
 import Firebase
 import SwiftLocation
 import MapKit
+import RxSwift
 
 class ParkTableViewController: UITableViewController {
 
@@ -87,7 +88,7 @@ class ParkTableViewController: UITableViewController {
     //MARK: - firebase park retriver
     //create dispatch group to update the tab view when done fetching all the
     //data from firebase
-    func getPark(){
+    func getPark()->Observable<Any>{
         let dispatchGroup = DispatchGroup()
         //populate the array with parks from firebase
         let ref = Database.database().reference(fromURL: "https://petzy-1001.firebaseio.com/input")
@@ -118,6 +119,7 @@ class ParkTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         })
+        return Observable.create(<#T##subscribe: (AnyObserver<_>) -> Disposable##(AnyObserver<_>) -> Disposable#>)
     }
     
     //MARK: - metter and km converter

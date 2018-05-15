@@ -235,8 +235,6 @@
 				CE6F53D11FF2DDF700785907 /* Sources */,
 				CE6F53D21FF2DDF700785907 /* Frameworks */,
 				CE6F53D31FF2DDF700785907 /* Resources */,
-				A31A97C13787C2F8C6E917F3 /* [CP] Embed Pods Frameworks */,
-				B34B935C13FFBBB864FBC7E1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,8 +254,6 @@
 				CE6F53DC1FF2DDF700785907 /* Sources */,
 				CE6F53DD1FF2DDF700785907 /* Frameworks */,
 				CE6F53DE1FF2DDF700785907 /* Resources */,
-				C29FFE614702E4328F7AD0FD /* [CP] Embed Pods Frameworks */,
-				D81D1380F29D616400464D94 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -432,66 +428,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A31A97C13787C2F8C6E917F3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PetzyIOSTests/Pods-PetzyIOSTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B34B935C13FFBBB864FBC7E1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PetzyIOSTests/Pods-PetzyIOSTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C29FFE614702E4328F7AD0FD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PetzyIOSUITests/Pods-PetzyIOSUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D81D1380F29D616400464D94 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PetzyIOSUITests/Pods-PetzyIOSUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F4C8B42C5A6711BCE2143BF9 /* [CP] Check Pods Manifest.lock */ = {
