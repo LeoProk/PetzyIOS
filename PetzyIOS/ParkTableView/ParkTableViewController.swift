@@ -37,7 +37,14 @@ class ParkTableViewController: UITableViewController {
             onFail: { locationError, cllocation in
                print(locationError)
         })
-        getPark()
+        print("sup")
+        getPark().subscribe(onNext: { n in
+            print(n)
+        },onCompleted: {
+            parksLocation.currentLocation = self.curLoc
+            parksLocation.parksArray = self.parksArray
+                self.tableView.reloadData()
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,37 +96,59 @@ class ParkTableViewController: UITableViewController {
     //create dispatch group to update the tab view when done fetching all the
     //data from firebase
     func getPark()->Observable<Any>{
-        let dispatchGroup = DispatchGroup()
-        //populate the array with parks from firebase
-        let ref = Database.database().reference(fromURL: "https://petzy-1001.firebaseio.com/input")
-        dispatchGroup.enter()
-        ref.observe(DataEventType.value, with: { (snapshot) in
-            _ = snapshot.value as? [String : AnyObject] ?? [:]
-            //for loop that loops over snapshot data to poulate new park
-            //add the park to parks array
-            for fireObj in snapshot.children{
-                //create new park from the firebase info
-                let parkSnap = Park(dataSnap : fireObj as! DataSnapshot)
-                //adds the park to the park list
-                //if there still parks left continue to loop otherwise
-                //end the dispatch
-                if self.parksArray.count < snapshot.childrenCount - 1{
-                    self.parksArray.append(parkSnap)
-                }else {
-                    dispatchGroup.leave()
+        
+//        let dispatchGroup = DispatchGroup()
+//        //populate the array with parks from firebase
+//        let ref = Database.database().reference(fromURL: "https://petzy-1001.firebaseio.com/input")
+//        dispatchGroup.enter()
+//        ref.observe(DataEventType.value, with: { (snapshot) in
+//            _ = snapshot.value as? [String : AnyObject] ?? [:]
+//            //for loop that loops over snapshot data to poulate new park
+//            //add the park to parks array
+//            for fireObj in snapshot.children{
+//                //create new park from the firebase info
+//                let parkSnap = Park(dataSnap : fireObj as! DataSnapshot)
+//                //adds the park to the park list
+//                //if there still parks left continue to loop otherwise
+//                //end the dispatch
+//                if self.parksArray.count < snapshot.childrenCount - 1{
+//                    self.parksArray.append(parkSnap)
+//                }else {
+//                    dispatchGroup.leave()
+//                }
+//            }
+//        })
+//        //when done looping over all the park reload the table view on
+//        //main thread
+//        dispatchGroup.notify(queue: DispatchQueue.main, execute: {
+//            parksLocation.currentLocation = self.curLoc
+//            parksLocation.parksArray = self.parksArray//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//        })
+        return Observable.create{
+            observ in let ref = Database.database().reference(fromURL: "https://petzy-1001.firebaseio.com/input")
+            print("hey")
+            ref.observe(DataEventType.value, with: { (snapshot) in
+                _ = snapshot.value as? [String : AnyObject] ?? [:]
+                //for loop that loops over snapshot data to poulate new park
+                //add the park to parks array
+                for fireObj in snapshot.children{
+                    //create new park from the firebase info
+                    let parkSnap = Park(dataSnap : fireObj as! DataSnapshot)
+                    //adds the park to the park list
+                    //if there still parks left continue to loop otherwise
+                    //end the dispatch
+                    if self.parksArray.count < snapshot.childrenCount - 1{
+                        self.parksArray.append(parkSnap)
+                        print(parkSnap.address)
+                    }else {
+                        observ.on(.completed)
+                    }
                 }
-            }
-        })
-        //when done looping over all the park reload the table view on
-        //main thread
-        dispatchGroup.notify(queue: DispatchQueue.main, execute: {
-            parksLocation.currentLocation = self.curLoc
-            parksLocation.parksArray = self.parksArray
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        })
-        return Observable.create(<#T##subscribe: (AnyObserver<_>) -> Disposable##(AnyObserver<_>) -> Disposable#>)
+            })
+            return Disposables.create()
+        }
     }
     
     //MARK: - metter and km converter
